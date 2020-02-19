@@ -1,23 +1,21 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import NavBar from "./components/navBar";
+import React, { Component } from "react";
+import NavBar from "./navBar";
 import { Route, Switch } from "react-router-dom";
 
-import Movies from "./components/movies";
-import Login from "./components/login";
+import Movies from "./movies";
+import Login from "./login";
 
-function App() {
+const App = () => {
   return (
     <React.Fragment>
       <NavBar />
       <Switch>
         <Route path="/movies" component={Movies} />
-        {/* <Route path="/login" component={Login} /> */}
+        <Route path="/login" component={Login} />
         <Route path="/" exact component={Movies} />
       </Switch>
     </React.Fragment>
   );
-}
+};
 
 export default App;
